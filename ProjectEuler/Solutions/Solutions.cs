@@ -1,55 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ProjectEuler.Solutions
 {
     public class Solutions
     {
-        public int MultiplesOf3And5()
-        {
-            int result = 0;
-
-            for (int i = 0; i < 1000; i++)
-            {
-                if (i % 3 == 0)
-                {
-                    result += i;
-                }
-                else if (i % 5 == 0)
-                {
-                    result += i;
-                }
-            }
-            return result;
-        }
-
-        public int EvenFibonacciNumbers()
-        {
-            int result = 0;
-            var sequence = new List<int>() { 1, 2 };
-
-            int nextNumber = 0;
-            int nextNumberIndex = 2;
-
-            // Build fibonacci sequence
-            while (nextNumber < 4000000)
-            {
-                nextNumber = sequence[nextNumberIndex - 2] + sequence[nextNumberIndex - 1];
-                sequence.Add(nextNumber);
-                nextNumberIndex++;
-            }
-
-            // Sum even values under 4000000
-            for (var i = 0; i < sequence.Count; i++)
-            {
-                if (sequence[i] % 2 == 0)
-                {
-                    result += sequence[i];
-                }
-            }
-
-            return result;
-        }
-
         public int GetLargestPrimeFactor(int n)
         {
             var primeFactor = 0;
